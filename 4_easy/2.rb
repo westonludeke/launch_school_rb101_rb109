@@ -5,7 +5,7 @@
 # New centuries begin in years that end with 01. So, the years 1901-2000 comprise the 20th century.
 
 def century(string)
-  if string > 11000
+  if string > 11100
     cent = (string.to_f / 100).ceil
     year = cent / 10
     nth_year = (11..13).include?(cent) || !(1..3).include?(year)
@@ -30,5 +30,6 @@ p  century(10103) == '102nd'
 p  century(1052) == '11th'
 p  century(1127) == '12th'
 p  century(11201) == '113th'
+
 
 
