@@ -6,11 +6,17 @@
 
 # You may not use ruby's Date and Time classes.
 
+# Weston's Note: My code is ugly and possibly illegal (holy method batman!) but damnit it works!
+
 def time_of_day(num)
-  # This is if we start with a positive number in the method, and the number is less than 60 (i.e. less than 60 mins)
+  # If we start with a positive number in the method, and the number is less than 60 (i.e. less than 60 mins)
   if num > 0 && num < 60
-    p "00" + ":" + num.to_s
-  # This is if num is positive but greater than 60 mins. And also less than 1440, or 24:00  
+    if num >= 10
+      p "00" + ":" + num.to_s
+    else
+      p "00" + ":0" + num.to_s 
+    end
+  # If num is positive but greater than 60 mins. And also less than 1440, or 24:00  
   elsif num > 60 && num <= 1440
     hour = num / 60
     string_hour = hour.to_s
@@ -21,18 +27,38 @@ def time_of_day(num)
   elsif num > 1440
     reduce_hour = num % 1440
     hour = reduce_hour / 60
-    string_hour = hour.to_s
+      # Add front zero if hour is less than 10
+      if hour <= 10
+        string_hour = "0" + hour.to_s
+      else
+        string_hour = hour.to_s 
+      end
     minutes = reduce_hour % 60
-    string_minutes = minutes.to_s
+      if minutes < 10
+        string_minutes = "0" + minutes.to_s
+      else
+        string_minutes = minutes.to_s    
+      end
     p string_hour + ":" + string_minutes
   # If number is negative, reduce from 24
   elsif num < 0
     reduce_hour = num % 1440
     hour = reduce_hour / 60
-    string_hour = hour.to_s
+    # Add front zero if hour is less than 10
+      if hour <= 10
+        string_hour = "0" + hour.to_s
+      else
+        string_hour = hour.to_s 
+      end
+    #string_hour = hour.to_s
     minutes = reduce_hour % 60
-    string_minutes = minutes.to_s
+      if minutes < 10
+          string_minutes = "0" + minutes.to_s
+        else
+          string_minutes = minutes.to_s    
+        end
     p string_hour + ":" + string_minutes
+  # If Midnight
   elsif num == 0
     p "00:00"
   else 
@@ -40,7 +66,13 @@ def time_of_day(num)
   end 
 end
 
-#time_of_day(-4231)
+time_of_day(4) 
+time_of_day(-3) 
+time_of_day(35) 
+time_of_day(-1437) 
+time_of_day(3000) 
+time_of_day(800) 
+time_of_day(-4231)
 
 =begin ---- PSEUDOCODE ----
 
@@ -59,14 +91,5 @@ end
 7) -4321 = 24:00 - 4321.  1440-4321
 
 =end
-
-
-time_of_day(0) 
-time_of_day(-3) 
-time_of_day(35) 
-time_of_day(-1437) 
-time_of_day(3000) 
-time_of_day(800) 
-time_of_day(-4231)
 
 
