@@ -4,8 +4,8 @@
 
 def cleanup(str)
   stripped = str.gsub(/[^0-9a-z ]/i, ' ')
-  #remove_extra_spaces = stripped.split.join(" ")
-  #p remove_extra_spaces
+  remove_extra_spaces = stripped.split.join(" ")
+  p remove_extra_spaces
 end
 
 
