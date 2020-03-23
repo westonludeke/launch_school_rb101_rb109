@@ -23,12 +23,11 @@
 =end
 
 
-length = 10
+length = 2
 n = 1
 # array must begin with a 0 because Fibonacci index starts at 1 instead of 0. Also, a 1 because there's two 1's in Fibonacci
 arr = [0,1]
 
-# Method to run Fibonacci
 def fibonacci(n)
   if n == 1
     1
@@ -38,6 +37,7 @@ def fibonacci(n)
     fibonacci(n-1) + fibonacci(n-2)
   end
 end
+
 # Calling Fibonacci method 'n' number of times
 fibonacci(n)
 
