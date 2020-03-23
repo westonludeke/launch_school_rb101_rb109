@@ -16,9 +16,10 @@
 
 =begin ---- Weston's Notes ------
   
-This is a very difficult problem. My code is ugly as hell but it runs, albiet incredibly slowly.
-I didn't follow instructions exactly because it was very hard.
-  
+1. This is a very difficult problem. My code is ugly as hell but it runs, albiet incredibly slowly.
+2. I didn't follow instructions exactly because it was very hard.
+3. When increasing the 'length' at 10 and above, the program becomes very slow. According to LS notes it seems to be because of Ruby not being well equipped to deal with the level of recursion required. 
+
 =end
 
 
