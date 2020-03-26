@@ -8,4 +8,4 @@ def interleave(arr, arr2)
   arr.zip(arr2).flatten.compact
 end
 
-interleave([1, 2, 3], ['a', 'b', 'c']) == [1, 'a', 2, 'b', 3, 'c']
+p interleave([1, 2, 3], ['a', 'b', 'c']) == [1, 'a', 2, 'b', 3, 'c']
