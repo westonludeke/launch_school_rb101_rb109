@@ -5,12 +5,10 @@
 def sum_of_sums(arr)
   total = 0
   new_arr = []
-
+  
   arr.each do |num|
     total = num + total
-    #p num
     new_arr << total
-    #p new_arr
   end
   new_arr.sum
 end
