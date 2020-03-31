@@ -16,8 +16,6 @@ def rotate_rightmost_digits(num_one, num_two)
   arr = str.split("")
   # Mirrors the num_two last elements of the array into a new Back Array... i.e. the back half
   back_arr = arr.last(num_two)
-  #back_arr # [291]
-
   # This is how many items should be removed from the front of arr, i.e the front array
   remove_front = arr.length - num_two
   # This is the remainder of arr that wasn't removed... i.e. the front half
