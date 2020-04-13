@@ -9,29 +9,40 @@
 # You may assume that n is always a positive integer.
 
 
-def rotate_rightmost_digits(num_one, num_two)
-  # Converts to String
-  str = num_one.to_s
-  # Converts to Array
-  arr = str.split("")
-  # Mirrors the num_two last elements of the array into a new Back Array... i.e. the back half
-  back_arr = arr.last(num_two)
-  # This is how many items should be removed from the front of arr, i.e the front array
-  remove_front = arr.length - num_two
-  # This is the remainder of arr that wasn't removed... i.e. the front half
-  front_arr = arr.first(remove_front)
-  # This is reordering the back half array
-  first = back_arr.shift
-  back_arr << first 
-  # This is combining the two halves together into a new array
-  new_arr = front_arr + back_arr
-  # Moving from an array to string to integer
-  new_arr.join('').to_i
+# def rotate_rightmost_digits(num_one, num_two)
+#   # Converts to String
+#   str = num_one.to_s
+#   # Converts to Array
+#   arr = str.split("")
+#   # Mirrors the num_two last elements of the array into a new Back Array... i.e. the back half
+#   back_arr = arr.last(num_two)
+#   # This is how many items should be removed from the front of arr, i.e the front array
+#   remove_front = arr.length - num_two
+#   # This is the remainder of arr that wasn't removed... i.e. the front half
+#   front_arr = arr.first(remove_front)
+#   # This is reordering the back half array
+#   first = back_arr.shift
+#   back_arr << first 
+#   # This is combining the two halves together into a new array
+#   new_arr = front_arr + back_arr
+#   # Moving from an array to string to integer
+#   new_arr.join('').to_i
+# end
+
+# Launch School Solution:
+def rotate_array(arr)
+  arr[1..-1] + [arr[0]]
 end
 
-p rotate_rightmost_digits(735291, 1) == 735291
-p rotate_rightmost_digits(735291, 2) == 735219
+def rotate_rightmost_digits(number, n)
+  all_digits = number.to_s.chars
+  all_digits[-n..-1] = rotate_array(all_digits[-n..-1])
+  all_digits.join.to_i
+end
+
+#p rotate_rightmost_digits(735291, 1) == 735291
+#p rotate_rightmost_digits(735291, 2) == 735219
 p rotate_rightmost_digits(735291, 3) == 735912
-p rotate_rightmost_digits(735291, 4) == 732915
-p rotate_rightmost_digits(735291, 5) == 752913
-p rotate_rightmost_digits(735291, 6) == 352917
+# p rotate_rightmost_digits(735291, 4) == 732915
+# p rotate_rightmost_digits(735291, 5) == 752913
+# p rotate_rightmost_digits(735291, 6) == 352917
