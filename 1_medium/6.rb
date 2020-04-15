@@ -57,7 +57,7 @@ minilang('4 PUSH PUSH 7 MOD MULT PRINT ')
 minilang('-3 PUSH 5 SUB PRINT')
 minilang('6 PUSH')
 
-=begin 
+=begin ---PSEUDOCODE ---
 # Register = The current value and is not part of the stack.
 
 MULT
