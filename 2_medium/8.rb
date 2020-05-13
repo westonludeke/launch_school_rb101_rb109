@@ -12,6 +12,11 @@ def featured(num)
     arr << arr[-1] + 1
     i += 1
     
+    # Breaking if number is too large
+    if (arr[-1] > 9876543210)
+      return "There is no possible number that fulfills those requirements"
+    end
+
     # Break if all of these conditions are met:
     #  The last array element value is odd
     #  Each element in the array is unique
@@ -30,8 +35,9 @@ p featured(21)  == 35
 p featured(997)  == 1029
 p featured(1029)  == 1043
 p featured(999_999) == 1_023_547
-p featured(999_999_987) == 1_023_456_987
-
+# This large number doesn't work too well, so try not to run it
+#p featured(999_999_987) == 1_023_456_987
+p featured(9_999_999_999) 
 
 =begin ----NOTES----
   
