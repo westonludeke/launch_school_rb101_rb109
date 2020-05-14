@@ -35,7 +35,7 @@ p featured(21)  == 35
 p featured(997)  == 1029
 p featured(1029)  == 1043
 p featured(999_999) == 1_023_547
-# This large number doesn't work too well, so try not to run it
+# This large number doesn't work too well, so try not to run
 #p featured(999_999_987) == 1_023_456_987
 p featured(9_999_999_999) 
 
