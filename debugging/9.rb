@@ -29,6 +29,7 @@ def guess_number(max_number, max_attempts)
 
     if guess == winning_number
       puts 'Yes! You win.'
+      break
     else
       puts 'Nope. Too small.' if guess < winning_number
       puts 'Nope. Too big.'   if guess > winning_number
